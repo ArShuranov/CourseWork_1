@@ -1,15 +1,15 @@
 package Basic;
 
 public class Employee {
-    String firstName;
-    String patronymic;
-    String lastName;
-    int department;
-    int salary;
-    public static int i = 1;
-    public int id = i;
+    private String firstName;
+    private String patronymic;
+    private String lastName;
+    private int department;
+    private int salary;
+    static int i = 1;
+    private int id;
 
-    public Employee(String firstName, String patronymic, String lastName, int department, int salary, int id) {
+    public Employee(String firstName, String patronymic, String lastName, int department, int salary) {
         this.firstName = firstName;
         this.patronymic = patronymic;
         this.lastName = lastName;
