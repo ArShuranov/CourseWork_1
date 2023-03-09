@@ -104,41 +104,30 @@ public class Basic {
 
 
     public static String minSalaryDepartment(int numberOfDepartment) {
-        int employeeNum = 0;
-        int minSalary = 0;
+        Employee min = null;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getDepartment() == numberOfDepartment) {
-                if (minSalary == 0) {
-                    minSalary = employees[i].getSalary();
-                    employeeNum = i;
-                }
-                if (minSalary > employees[i].getSalary()) {
-                    minSalary = employees[i].getSalary();
-                    employeeNum = i;
+                if (min == null || employees[i].getSalary() < min.getSalary()) {
+                    min = employees[i];
                 }
 
             }
         }
-        return employees[employeeNum].getFirstName() + " " + employees[employeeNum].getLastName() + " " + employees[employeeNum].getSalary();
+        return min.getFirstName() + " " + min.getLastName() + " " + min.getSalary();
     }
 
     public static String maxSalaryDepartment(int numberOfDepartment) {
-        int employeeNum = 0;
-        int minSalary = 0;
+        Employee max = null;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getDepartment() == numberOfDepartment) {
-                if (minSalary == 0) {
-                    minSalary = employees[i].getSalary();
-                    employeeNum = i;
+                if (max == null || employees[i].getSalary() > max.getSalary()) {
+                    max = employees[i];
                 }
-                if (minSalary < employees[i].getSalary()) {
-                    minSalary = employees[i].getSalary();
-                    employeeNum = i;
-                }
-
             }
+
+
         }
-        return employees[employeeNum].getFirstName() + " " + employees[employeeNum].getLastName() + " " + employees[employeeNum].getSalary();
+        return max.getFirstName() + " " + max.getLastName() + " " + max.getSalary();
     }
 
     public static int sumSalaryDepartment(int numberOfDepartment) {
